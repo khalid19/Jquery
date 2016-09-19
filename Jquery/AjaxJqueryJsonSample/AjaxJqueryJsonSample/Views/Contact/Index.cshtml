@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Contact List</h2>
+@Html.ActionLink("Add New Contact", "Save", "Contact", null, new { @style = "font-size:22px;", @class = "popup"  })
+
+<div id="update_panel">
+    
+</div>
+
+<link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+
+<style>
+    html,body,footer, #body {
+        background-color: #fff;
+    }
+    .ui-widget-header {
+        border: none !important;
+        background: none !important;
+        color: #222222;
+        font-weight: bold;
+    }
+    .ui-state-default, .ui-state-hover {
+        border: none !important;
+        background: none !important;
+    }
+    .ui-dialog {
+        -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    }
+    h2 {
+        margin-top: 0px;
+        font-size: 30px;
+    }
+    .success {
+        color: green;
+    }
+    .failed {
+        color: red;
+    }
+    
+     
+</style>
+
+@section Scripts{
+    
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="~/Scripts/CRUDContact.js"></script>
+    
+}
+
+

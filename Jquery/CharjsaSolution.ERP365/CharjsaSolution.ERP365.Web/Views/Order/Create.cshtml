@@ -1,0 +1,60 @@
+﻿@model CharjsaSolution.ERP365.Web.Models.OrderViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("Save","Order",FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>
+                <label>OderNo:</label>
+             
+            </td>
+            <td>
+                @Html.TextBoxFor(x=>x.Order.OrderNo)
+            </td>
+            <td>
+               
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>OderDate:</label>
+
+            </td>
+            <td>
+                @Html.TextBoxFor(x => x.Order.OrderDate)
+            </td>
+            <td>
+                <input type="button" value="Save" class="saveButtton" />
+            </td>
+        </tr>
+    </table>
+}
+
+<div id="OrderList">
+    
+</div>
+@section scripts
+{
+    <script type="text/javascript">
+        $(function () {
+
+            $('.saveButtton').unbind('click').bind('click', function () {
+                var form = $(this).parents('form:first');
+                var url = form.attr('action');
+                var option = {
+                    url: url,
+                    type: "POST",
+                    data: form.serialize(),
+                    dataType: "html"
+                 
+                };
+                $.ajax(option).done(function(resp) {
+                    $('#OrderList').html(resp);
+                });
+            });
+
+        })
+    </script>
+}

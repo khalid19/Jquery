@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JqueryAjaxJsonCharja.Solution.Data", "JqueryAjaxJsonCharja.Solution.Data\JqueryAjaxJsonCharja.Solution.Data.csproj", "{06BC0BA1-F46F-4798-B4A1-C91C64D15CD7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JqueryAjaxJsonCharja.Solution.Entity", "JqueryAjaxJsonCharja.Solution.Entity\JqueryAjaxJsonCharja.Solution.Entity.csproj", "{FE1A7392-A488-428A-8D1F-D03A4E56497D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JqueryAjaxJsonCharja.Solution.Service", "JqueryAjaxJsonCharja.Solution.Service\JqueryAjaxJsonCharja.Solution.Service.csproj", "{887687AF-DB40-4DA6-A6BF-469E4549DB9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JqueryAjaxJsonCharja.Solution.Utility", "JqueryAjaxJsonCharja.Solution.Utility\JqueryAjaxJsonCharja.Solution.Utility.csproj", "{00DF27B6-A9AF-4A07-B030-B8B9390BB9EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JqueryAjaxJsonCharja.Solution.Web", "JqueryAjaxJsonCharja.Solution.Web\JqueryAjaxJsonCharja.Solution.Web.csproj", "{2BA34EC4-BE59-4502-A6C0-FE03C5AE6290}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{06BC0BA1-F46F-4798-B4A1-C91C64D15CD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06BC0BA1-F46F-4798-B4A1-C91C64D15CD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06BC0BA1-F46F-4798-B4A1-C91C64D15CD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06BC0BA1-F46F-4798-B4A1-C91C64D15CD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE1A7392-A488-428A-8D1F-D03A4E56497D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE1A7392-A488-428A-8D1F-D03A4E56497D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE1A7392-A488-428A-8D1F-D03A4E56497D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE1A7392-A488-428A-8D1F-D03A4E56497D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{887687AF-DB40-4DA6-A6BF-469E4549DB9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{887687AF-DB40-4DA6-A6BF-469E4549DB9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{887687AF-DB40-4DA6-A6BF-469E4549DB9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{887687AF-DB40-4DA6-A6BF-469E4549DB9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00DF27B6-A9AF-4A07-B030-B8B9390BB9EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00DF27B6-A9AF-4A07-B030-B8B9390BB9EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00DF27B6-A9AF-4A07-B030-B8B9390BB9EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00DF27B6-A9AF-4A07-B030-B8B9390BB9EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BA34EC4-BE59-4502-A6C0-FE03C5AE6290}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BA34EC4-BE59-4502-A6C0-FE03C5AE6290}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BA34EC4-BE59-4502-A6C0-FE03C5AE6290}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BA34EC4-BE59-4502-A6C0-FE03C5AE6290}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

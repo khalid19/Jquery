@@ -1,0 +1,138 @@
+﻿@model JqueryAjaxJsonCharja.Solution.Web.Models.OrderViewModel
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+<hr/>
+
+<section class="section">
+    @using (Html.BeginForm("Save", "Order", FormMethod.Post, new { @class = "OrderForm" }))
+    {
+
+
+    @*<input type="text" name="OrderNo" value="" />
+        <input type="button" value="Save" class="saveButton"/>*@
+        
+        @Html.HiddenFor(x=>x.Order.OrderId)
+
+
+        @Html.LabelFor(x => x.Order.OrderNo)
+        @Html.TextBoxFor(x => x.Order.OrderNo, new { @class = "form-control" })
+
+        <br />
+        @Html.LabelFor(x => x.Order.Date)
+        @Html.TextBoxFor(x => x.Order.Date, new { @class = "form-control" })
+
+        <br />
+        <input type="button" value="Save" class="btn btn-danger" />
+    }  
+</section>
+<h3>
+    <b>Order List</b>
+</h3>
+<hr/>
+
+<div id="OrderList">
+    <table class="table table-bordered table-hover table-striped table-responsive">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Order.OrderNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order.Date)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.Orders)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrderNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { orderId = item.OrderId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.OrderId }) |
+                    @Html.ActionLink("Delete", "Delete", new { orderId = item.OrderId })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+
+
+
+
+
+
+
+@section scripts
+{
+    <script type="text/javascript">
+
+
+        //$(function() {
+
+        //    $('.saveButton').unbind('click').bind('click', function () {
+
+        //        var form = $(this).parents('form:first');
+
+        //        var option = {
+        //            url: "/Order/Save",
+        //            type: "POST",
+        //            data: form.serialize(),
+        //            dataType: "json"
+
+
+        //        };
+
+        //        $.ajax(option).done(function (resp) {
+
+        //            alert(resp);
+
+        //        });
+
+
+        //    });
+
+
+
+
+        //})
+
+
+        $(function () {
+
+            $('.btn-danger').unbind('click').bind('click', function () {
+
+                var form = $(this).parents('form:first');
+
+
+
+                var option = {
+                    url: "/Order/Save",
+                    type: "POST",
+                    data: form.serialize(),
+                    //data: form.serialize(),
+                    dataType: "html"
+                };
+                $.ajax(option).done(function (resp) {
+                    $('#OrderList').html(resp);
+                });
+
+
+            });
+
+
+        });
+    </script>
+
+
+
+}
+

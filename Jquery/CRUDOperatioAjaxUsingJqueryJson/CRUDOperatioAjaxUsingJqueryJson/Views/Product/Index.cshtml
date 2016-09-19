@@ -1,0 +1,159 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.1.0.js"></script>
+    <script src="~/Scripts/jquery-3.1.0.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</head>
+<body>
+    <div id="myModelProduct" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <div class="modal-title" id="ModelTile"></div>
+                    <div class="modal-body" id="myModelContaint"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="padding: 40px;">
+        <button type="button" class="btn btn-primary" data-target="#myModelProduct" onclick="CreateProduct()">Add New Product</button>
+        <div class="panel panel-primary">
+            <div class="panel panel-heading">
+                <b>Phone Detail Information </b>
+            </div>
+            <div class="panel panel-body">
+                <div id="loadstatus"></div>
+                <table id="tblPhone" class="table table-hover table-bordered table-responsive">
+                    <thead>
+                        <tr>
+                        
+                            <th>Phone Name </th>
+                            <th>Phone Price</th>
+                            <th>Quantity Of Phone</th>
+                            <th>Operation</th>
+                        </tr>
+
+
+
+
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    $("#loadstatus").html("Loading.....................");
+    $.get("/Product/GetProductDetails", null, BindData);
+    debugger;
+    function BindData(products) {
+        debugger;
+        var tablename = $("#tblPhone");
+
+        for (var i = 0; i < products.length; i++) {
+
+            var TableData = "<tr>" +
+
+              "<td>" + products[i].Name + "</td>" +
+                "<td>" + products[i].Price + "</td>" +
+                "<td>" + products[i].Quantity + "</td>" +
+                "<td>" +
+
+               "<a href='#' class='btn btn-danger' onclick='Edit("+products[i].ProductId+")'><span class='glyphicon glyphicon-edit'>Edit</span></a>" +
+                "<a href='#' class='btn btn-danger' onclick='Delete(" + products[i].ProductId + ")'><span class='glyphicon glyphicon-remove'>Delete</span></a>" + "</td>" +
+                +"<tr>";
+            tablename.append(TableData);
+        }
+        $("#loadstatus").html("");
+
+    }
+    //EditProduct(" + products[i].ProductId + ")
+
+
+
+    function CreateProduct() {
+
+        var div = $("#myModelContaint");
+        div.load("/Product/Create");
+
+        $("#ModelTile").html("Add New Product Details");
+        $("#myModelProduct").modal();
+
+    }
+
+
+
+    function SaveProduct() {
+        var productDetails = $("#productForm").serialize();
+        $.post("/Product/Create", productDetails, function (data) {
+
+            if (data == 0) {
+
+                location = location.href;
+            }
+            else {
+
+                var tablename = $("#tblPhone");
+                var TableData = "<tr>" +
+            "<td>" + data.Name + "</td>" +
+            "<td>" + data.Price + "</td>" +
+            "<td>" + data.Quantity + "</td>" +
+            "<td>" + "" + "</td>" +
+            +"<tr>";
+                tablename.append(TableData);
+
+                $("#myModelProduct").modal('hide');
+
+            }
+        }, 'json');
+    }
+
+
+    function Edit(productId) {
+        debugger;
+
+
+
+        var div = $("#myModelContaint");
+        
+        $("#ModelTile").html("Update Product Details");
+
+        //div.load("/Product/Edit"+ID);
+
+        div.load("Product/Edit", + productId);
+        $("#myModelProduct").modal();
+
+    }
+
+
+    function Delete(ID) {
+        $.get("/Product/Delete" + ID, null, function (data) {
+            if (data == 0) {
+                location = location.href;
+
+            } else {
+                window.location.replace("/Product/Index");
+                window.location.reload(true);
+            }
+
+        });
+    }
+
+
+
+
+</script>

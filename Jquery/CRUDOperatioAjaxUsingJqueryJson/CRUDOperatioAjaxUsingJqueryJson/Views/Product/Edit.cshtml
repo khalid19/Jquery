@@ -1,0 +1,20 @@
+﻿@model CRUDOperatioAjaxUsingJqueryJson.Model.Product
+           
+<form id="productForm">
+    <fieldset>
+        <legend>
+
+        </legend>
+        <input type="hidden" name="ProductId" id="ProductId" value="@Model.ProductId" />
+        Product Name
+        <input type="text" name="Name" id="Name" class="form-control" value="@Model.Name" />
+        Product Price
+        <input type="text" name="Price" id="Price" class="form-control" value="@Model.Price" />
+        Product Price
+        <input type="text" name="Quantity" id="Quantity" class="form-control" value="@Model.Quantity" />
+        <br />
+
+        <input type="button" name="btnSubmit" class="btn btn-primary" value="Save" onclick="EditProduct(@Model.ProductId)" />
+    </fieldset>
+</form>
+

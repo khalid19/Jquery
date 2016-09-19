@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AjaxJqueryJsonSample", "AjaxJqueryJsonSample\AjaxJqueryJsonSample.csproj", "{F02DA504-3BD9-4319-ADBD-1C3300834B03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AjaxJqueryJsonSample.DAL", "AjaxJqueryJsonSample.DAL\AjaxJqueryJsonSample.DAL.csproj", "{67DE6B2D-F40E-4878-87F8-532DD0644959}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AjaxJqueryJsonSample.Model", "AjaxJqueryJsonSample.Model\AjaxJqueryJsonSample.Model.csproj", "{12040AC6-A842-4E26-A771-B1C18DFE4FEA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F02DA504-3BD9-4319-ADBD-1C3300834B03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F02DA504-3BD9-4319-ADBD-1C3300834B03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F02DA504-3BD9-4319-ADBD-1C3300834B03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F02DA504-3BD9-4319-ADBD-1C3300834B03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67DE6B2D-F40E-4878-87F8-532DD0644959}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67DE6B2D-F40E-4878-87F8-532DD0644959}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67DE6B2D-F40E-4878-87F8-532DD0644959}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67DE6B2D-F40E-4878-87F8-532DD0644959}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12040AC6-A842-4E26-A771-B1C18DFE4FEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12040AC6-A842-4E26-A771-B1C18DFE4FEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12040AC6-A842-4E26-A771-B1C18DFE4FEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12040AC6-A842-4E26-A771-B1C18DFE4FEA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

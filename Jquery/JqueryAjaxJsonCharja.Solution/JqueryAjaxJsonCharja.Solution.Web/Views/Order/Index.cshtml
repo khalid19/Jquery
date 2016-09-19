@@ -1,0 +1,39 @@
+﻿@model JqueryAjaxJsonCharja.Solution.Web.Models.OrderViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-bordered table-hover table-striped table-responsive">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Order.OrderNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Order.Date)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model.Orders) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { orderId=item.OrderId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.OrderId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.OrderId })
+        </td>
+    </tr>
+}
+
+</table>
